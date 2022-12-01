@@ -1,0 +1,7 @@
+.characterCard-wrapper{
+  width: 600px;
+  height: 200PX;
+  background-color: rgb(60, 62, 68);
+  border-radius: 15PX;
+  color: #fff;
+}
