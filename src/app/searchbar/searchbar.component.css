@@ -1,0 +1,27 @@
+form {
+  display: flex;
+  flex-direction: row;
+  border-radius: 0px 20px 20px 0px;
+  border:solid #eee;
+  width: 300px;
+  margin: 30px;
+  padding: 2px;
+  height: 30px;
+  
+}
+input {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  padding: 10px;
+  border: none;
+  outline-style: none;
+}
+
+button {
+  width: 30%;
+  border-radius: 0px 20px 20px 0px;
+  color: #fff;
+  background: linear-gradient(to bottom     left,forestgreen, chartreuse);
+  border: none;
+}
