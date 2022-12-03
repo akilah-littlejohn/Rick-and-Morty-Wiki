@@ -9,6 +9,7 @@ import {
 } from "rxjs/operators";
 import { fromEvent } from 'rxjs';
 import { HttpClient, HttpParams } from "@angular/common/http";
+
 @Injectable()
 export class ShowcaseCharacterDataService {
 
