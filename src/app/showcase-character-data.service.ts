@@ -1,18 +1,34 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Component, ViewChild, ElementRef, OnInit } from "@angular/core";
-import { of } from "rxjs";
-import {
-  debounceTime,
-  map,
-  distinctUntilChanged,
-  filter
-} from "rxjs/operators";
-import { fromEvent } from 'rxjs';
-import { HttpClient, HttpParams } from "@angular/common/http";
+import { Observable } from 'rxjs';
 
-@Injectable()
-export class ShowcaseCharacterDataService {
+@Injectable({
+  providedIn: 'root',
+ 
+})
+export class DataService {
 
-  constructor() { }
+url:string = "https://rickandmortyapi.com/api/character/1";
+character:any;
+id:any;
+data:any;
+
+  constructor(private http:HttpClient) { }
+getCharacter():Observable<Object>{
+  return this.http.get(`${this.url}`)
+}
+
+logCharacter(){
+   this.getCharacter().subscribe((res) => {
+    this.id = JSON.stringify(res);
+    this.data = JSON.parse(this.id)
+    this.character = {
+      name:this.data.name,
+      species:this.data.species,
+      image:this.data.image,
+      episode:this.data.episode
+    }
+   })
+}
 
 }
